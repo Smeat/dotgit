@@ -65,8 +65,8 @@ function restore
 			verecho "$(levecho 3 "Creating symlink in home folder")"
 			cmd="ln -s"
 		else
-			verecho "$(levecho 3 "Creating copy in home folder")"
-			cmd="cp -p"
+			verecho "$(levecho 3 "Creating hardlink home folder")"
+			cmd="ln"
 		fi
 		eval "$cmd \"$REPO/$DFDIR/${c[0]}/$f\" \"$HOME/$f\""
 	done
